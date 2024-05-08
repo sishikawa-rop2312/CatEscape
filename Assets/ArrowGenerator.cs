@@ -22,7 +22,8 @@ public class ArrowGenerator : MonoBehaviour
         {
             this.delta = 0;
             GameObject go = Instantiate(arrowPrefab);
-            int px = Random.Range(-6, 7);
+            // int px = Random.Range(-6, 7);
+            int px = Random.Range(-10, 11);
             go.transform.position = new Vector3(px, 7, 0);
         }
     }

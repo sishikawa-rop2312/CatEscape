@@ -16,13 +16,25 @@ public class PlayerController : MonoBehaviour
         // 左矢印押下
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.Translate(-3, 0, 0);
+            LButtonDown();
         }
 
         // 右矢印押下 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.Translate(3, 0, 0);
+            RButtonDown();
         }
+    }
+
+    // 左ボタン押下
+    public void LButtonDown()
+    {
+        transform.Translate(-3, 0, 0);
+    }
+
+    // 右ボタン押下
+    public void RButtonDown()
+    {
+        transform.Translate(3, 0, 0);
     }
 }
