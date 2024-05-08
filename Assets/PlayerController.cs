@@ -14,15 +14,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // 左矢印押下
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -9.5f)
         {
-            transform.Translate(-3, 0, 0);
+            transform.Translate(-3 * Time.deltaTime * 3, 0, 0);
         }
 
         // 右矢印押下 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 9.5f)
         {
-            transform.Translate(3, 0, 0);
+            transform.Translate(3 * Time.deltaTime * 3, 0, 0);
         }
     }
 }
