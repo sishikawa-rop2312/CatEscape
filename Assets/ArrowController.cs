@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-    public GameObject player;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         // この処理は重いので、publicにして直接紐づける
-        // this.player = GameObject.Find("player");
+        this.player = GameObject.Find("player");
     }
 
     // Update is called once per frame
@@ -35,6 +35,10 @@ public class ArrowController : MonoBehaviour
 
         if (d < r1 + r2)
         {
+            // 監督スクリプトにプレイヤと衝突したことを伝える
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().DecreaseHp();
+
             // 衝突した場合は矢を消す
             Destroy(gameObject);
         }
