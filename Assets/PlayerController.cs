@@ -24,6 +24,12 @@ public class PlayerController : MonoBehaviour
         {
             RButtonDown();
         }
+
+        // GameOverでこのスクリプト自体を無効にする
+        if (Time.timeScale <= 0)
+        {
+            this.enabled = false;
+        }
     }
 
     // 左ボタン押下

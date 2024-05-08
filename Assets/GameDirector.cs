@@ -21,5 +21,11 @@ public class GameDirector : MonoBehaviour
     {
         // this.hpGauge.GetComponent<Image>().fillAmount -= 0.1f;
         this.hpGauge.fillAmount -= 0.1f;
+
+        // GameOver
+        if (this.hpGauge.fillAmount <= 0)
+        {
+            Time.timeScale = 0f;
+        }
     }
 }

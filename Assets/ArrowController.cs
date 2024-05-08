@@ -44,5 +44,11 @@ public class ArrowController : MonoBehaviour
             // 衝突した場合は矢を消す
             Destroy(gameObject);
         }
+
+        // GameOverでこのスクリプト自体を無効にする
+        if (Time.timeScale <= 0)
+        {
+            this.enabled = false;
+        }
     }
 }
