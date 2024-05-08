@@ -28,12 +28,14 @@ public class ArrowController : MonoBehaviour
         Vector2 p1 = transform.position;
         Vector2 p2 = this.player.transform.position;
         Vector2 dir = p1 - p2;
+
         float d = dir.magnitude;
         float r1 = 0.5f;    // 矢の半径
         float r2 = 1.0f;    // プレイヤの半径
 
         if (d < r1 + r2)
         {
+            // 衝突した場合は矢を消す
             Destroy(gameObject);
         }
     }
